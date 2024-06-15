@@ -1,4 +1,4 @@
-# aag_cloudwatcher_watchdog
+# Watchdog Script for AAG Cloud Watcher
 This is a simple watchdog script to check if AAG Cloud Watcher is working as expected, and restart it in case it is not.
 
 The script is checking if the age of the aag_json.dat file is older than an expected value.
