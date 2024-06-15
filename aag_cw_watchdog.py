@@ -16,8 +16,8 @@ CLOUD_WATCHER_EXE         = "AAG_CloudWatcher.exe"
 CLOUD_WATCHER_PATH        = "C:/Program Files (x86)/AAG_CloudWatcher"
 CLOUD_WATCHER_OUTPUT_PATH = "C:/aag"
 CLOUD_WATCHER_TIMEOUT_SEC = 120
-LOG_FILE = "C:/aag/aag_watchdog.log"
-LOG_LEVEL = logging.INFO
+LOG_FILE                  = "C:/aag/aag_watchdog.log"
+LOG_LEVEL                 = logging.INFO
 
 ############## END - SET YOUR CONSTANTS HERE - END ######################
 
