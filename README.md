@@ -30,4 +30,4 @@ It is recommended to schedule the script using the Windows Task Scheduler.
 - Create a new Task
 - Select "Run wether user is logged on or not" and select "Run with highes privileges"
 - Create a Trigger to execute the Task with a repeat interval of "1 Minute" and set a starting time and select to end the Task after "30 Minutes"
-- Create an action and point to the compiled .exe or the python file of the script (depending on your environment)
+- Create an Action and point to the compiled .exe or the python file of the script (depending on your environment)
