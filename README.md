@@ -9,7 +9,7 @@ In general the script should be running out of the box without arguments if Clou
 
 Please enable the options "Start & Connect" and "Connect & Record" in the Cloud Watcher Device settings in the Setup tab, so that it immeadiately starts to create and update the "aag_json.dat" file.
 
-I am providing a compiled (.exe) tool in the releases section, which includes the python runtime and all required libraries.
+I am providing a compiled (.exe) tool in the [releases](https://github.com/ngaertner/aag_cloudwatcher_watchdog/releases) section, which includes the python runtime and all required libraries.
 
 You can use the following command line arguments to configure the script:
 ```
