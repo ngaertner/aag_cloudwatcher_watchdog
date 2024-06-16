@@ -31,7 +31,7 @@ options:
 It is recommended to schedule the script using the Windows Task Scheduler.
 - Start the Task Scheduler using keys "Windows + R" and enter "%windir%\system32\taskschd.msc /s"
 - Create a new Task
-- Select "Run wether user is logged on or not" and select "Run with highes privileges"
+- Select "Run wether user is logged on or not" and select "Run with highest privileges"
 - Create a Trigger to execute the Task with a repeat interval of "1 Minute" and set a starting time and select to end the Task after "30 Minutes"
 - Create an Action and point to the compiled .exe or the python file of the script (depending on your environment)
 
