@@ -11,7 +11,7 @@ Please enable the options "Start & Connect" and "Connect & Record" in the Cloud 
 I am providing a compiled (.exe) tool in the releases section, which includes the python runtime and all required libraries.
 
 You can use the following command line arguments to configure the script:
-´
+```
 usage: aag_cw_watchdog [-h] [--cw_path CW_PATH] [--out_path OUT_PATH] [--timeout TIMEOUT] [--log_dir LOG_DIR] [--log_file LOG_FILE] [--log_level {INFO,WARNING,ERROR}]
 
 options:
@@ -22,7 +22,7 @@ options:
   --log_dir LOG_DIR                 Directory to store Log Files
   --log_file LOG_FILE               Log Filename - default aag_cw_watchdog.log
   --log_level {INFO,WARNING,ERROR}  Log Level - default INFO
-´
+```
 
 It is recommended to schedule the script using the Windows Task Scheduler.
 - Start the Task Scheduler using keys "Windows + R" and enter "%windir%\system32\taskschd.msc /s"
