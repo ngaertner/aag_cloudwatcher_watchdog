@@ -1,0 +1,5 @@
+aag_cw_watchdog.log
+aag_cw_watchdog.spec
+/dist/*
+/build/*
+/release/*
