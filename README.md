@@ -29,7 +29,7 @@ options:
 ```
 
 ### SCHEDULING:
-It is recommended to schedule the attached VBS script using the Windows Task Scheduler.
+It is recommended to schedule the included VBS script instead of the python script or the .EXE file using the Windows Task Scheduler .
 - Start the Task Scheduler using keys "Windows + R" and enter "%windir%\system32\taskschd.msc /s"
 - Create a new Task
 - Do *NOT* select "Run wether user is logged on or not" and do *NOT* select "Run with highest privileges" - otherwhise you might get weird effects and "Zombie" Cloud Watcher instances
