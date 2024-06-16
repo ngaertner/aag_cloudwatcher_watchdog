@@ -28,12 +28,18 @@ options:
   --log_level {INFO,WARNING,ERROR}  Log Level - default INFO
 ```
 
-It is recommended to schedule the script using the Windows Task Scheduler.
+### SCHEDULING:
+It is recommended to schedule the included VBS script instead of the python script or the .EXE file using the Windows Task Scheduler .
 - Start the Task Scheduler using keys "Windows + R" and enter "%windir%\system32\taskschd.msc /s"
 - Create a new Task
-- Select "Run wether user is logged on or not" and select "Run with highest privileges"
+- Do *NOT* select "Run wether user is logged on or not" and do *NOT* select "Run with highest privileges" - otherwhise you might get weird effects and "Zombie" Cloud Watcher instances
 - Create a Trigger to execute the Task with a repeat interval of "1 Minute" and set a starting time and select to end the Task after "30 Minutes"
-- Create an Action and point to the compiled .exe or the python file of the script (depending on your environment)
+- Create an Action and point to the [aag_cw_watchdog.vbs](https://github.com/ngaertner/aag_cloudwatcher_watchdog/blob/main/aag_cw_watchdog.vbs) file
+
+#### NOTE:
+The VBS script requires the .EXE file (see [releases](https://github.com/ngaertner/aag_cloudwatcher_watchdog/releases)) in the same folder.
+You can pass all arguments mentioned above to the VBS script - it will pass them to the executable.
+The script will prevent annoing console popups that will appear during the execution of the task.
 
 ## DISCLAIMER
 
