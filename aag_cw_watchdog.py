@@ -72,6 +72,7 @@ CLOUD_WATCHER_PATH = args.cw_path
 CLOUD_WATCHER_OUTPUT_PATH = args.out_path
 CLOUD_WATCHER_TIMEOUT_SEC = args.timeout
 LOG_DIR = args.log_dir
+LOG_FILE = args.log_file
 
 match args.log_level:
     case 'INFO':
@@ -192,7 +193,9 @@ if (json_age > CLOUD_WATCHER_TIMEOUT_SEC ):
            sys.exit()
 
     logger.info("Starting Cloud Watcher!")
-    sp = subprocess.Popen([cloudwather_exe_file,""], start_new_session=True, shell=True)
+    with open(os.devnull, 'w') as fp:
+        sp = subprocess.Popen([cloudwather_exe_file,""],stdout = fp,start_new_session=True)
+    
     time.sleep(1)
     if (CLOUD_WATCHER_EXE not in (p.name() for p in psutil.process_iter())):
         logger.error("Cloud Watcher could not be started!")
@@ -200,3 +203,4 @@ if (json_age > CLOUD_WATCHER_TIMEOUT_SEC ):
         logger.info("Cloud Watcher successfully started!")
 
     log_file_handler.flush()
+
