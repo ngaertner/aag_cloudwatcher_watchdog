@@ -161,10 +161,10 @@ if os.path.isfile(cloudwather_exe_file) == False:
 if os.path.isfile(aag_json_file):
     st=os.stat(aag_json_file)
     mtime=st.st_mtime
-    last_change = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d, %H:%M:%S")
+    last_change = datetime.fromtimestamp(mtime)
     
     json_age = int((datetime.now() -last_change).total_seconds())
-    logger.info(f"{CLOUD_WATCHER_AAG_JSON} - last change = {last_change} - age is {json_age} seconds")
+    logger.info(f"{CLOUD_WATCHER_AAG_JSON} - last change = {last_change.strftime("%Y-%m-%d, %H:%M:%S")} - age is {json_age} seconds")
     if json_age > CLOUD_WATCHER_TIMEOUT_SEC:
         logger.warning(f"{CLOUD_WATCHER_AAG_JSON} file is not up to date!")
 else:
