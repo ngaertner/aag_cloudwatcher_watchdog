@@ -11,6 +11,9 @@ Please enable the options "Start & Connect" and "Connect & Record" in the Cloud 
 
 I am providing a compiled (.exe) tool in the [releases](https://github.com/ngaertner/aag_cloudwatcher_watchdog/releases) section, which includes the python runtime and all required libraries.
 
+
+## USAGE
+
 You can use the following command line arguments to configure the script:
 ```
 usage: aag_cw_watchdog [-h] [--cw_path CW_PATH] [--out_path OUT_PATH] [--timeout TIMEOUT] [--log_dir LOG_DIR] [--log_file LOG_FILE] [--log_level {INFO,WARNING,ERROR}]
