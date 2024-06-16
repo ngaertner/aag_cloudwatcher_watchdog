@@ -9,27 +9,30 @@ import logging.handlers
 import pathlib
 from io import StringIO
 import argparse
-import tempfile
+import winreg
 
 
 ############## BEGIN - SET YOUR CONSTANTS HERE - BEGIN ######################
 
 ### PLEASE use foward "/" as path or file separator - no '\'!
 
-CLOUD_WATCHER_EXE         = "AAG_CloudWatcher.exe"
-CLOUD_WATCHER_PATH        = "C:/Program Files (x86)/AAG_CloudWatcher"
-CLOUD_WATCHER_TIMEOUT_SEC = 120
-LOG_FILE                  = "aag_watchdog.log"
-LOG_LEVEL                 = logging.NOTSET
+### these constants are the default values for the CLI
+
+CLOUD_WATCHER_EXE         = "AAG_CloudWatcher.exe"                      # should never be changed
+CLOUD_WATCHER_PATH        = "C:/Program Files (x86)/AAG_CloudWatcher"   # default installation directory
+CLOUD_WATCHER_OUTPUT_PATH = ""                                          # if empty will be determined automatically from the registry
+CLOUD_WATCHER_TIMEOUT_SEC = 120                                         
+LOG_FILE                  = ""                                          # if empty will be placed in the working directory
+LOG_LEVEL                 = "INFO"                                      # possible values are INFO, WARNING, ERROR
 
 ############## END - SET YOUR CONSTANTS HERE - END ######################
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--cw_path', help='Cloud Watcher Path (contains AAG_CloudWatcher.exe)', default=CLOUD_WATCHER_PATH)
-parser.add_argument('--out_path', help='Cloud Watcher Output Path (contanis aag_json.dat)',required=True)
+parser.add_argument('--out_path', help='Cloud Watcher Output Path (contanis aag_json.dat)',default=CLOUD_WATCHER_OUTPUT_PATH)
 parser.add_argument('--timeout', help='Timeout to restart inactive Cloud Watcher in seconds (default 120s)', default=CLOUD_WATCHER_TIMEOUT_SEC)
 parser.add_argument('--log_file', help='Logfile', default=LOG_FILE)
-parser.add_argument('--log_level', help='Log Level', default='INFO', choices=['INFO','WARNING','ERROR'])
+parser.add_argument('--log_level', help='Log Level', default=LOG_LEVEL, choices=['INFO','WARNING','ERROR'])
 
 args = parser.parse_args()
 
@@ -46,7 +49,7 @@ match args.log_level:
     case 'ERROR':
         LOG_LEVEL = logging.ERROR
     case _:
-        LOG_LEVEL = LOG_LEVEL
+        LOG_LEVEL = logging.NOTSET
 
 #logging.basicConfig(encoding='utf-8')
 logger = logging.getLogger('AAG_CW_WATCHDOG')
@@ -76,6 +79,26 @@ if os.path.isfile(cloudwather_exe_file) == False:
     sys.exit()
 
 
+#### initialize log handler
+logging.basicConfig(filename=LOG_FILE, encoding='utf-8')
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+log_handler = logging.StreamHandler(sys.stdout)
+log_handler.setLevel(LOG_LEVEL)
+log_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+log_handler.setFormatter(log_formatter)
+logger.addHandler(log_handler)
+
+
+#### initialize cloud watcher output path from registry
+if CLOUD_WATCHER_OUTPUT_PATH == "":
+    aReg = winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER)
+    aKey = winreg.OpenKey(aReg, r'Software\VB and VBA Program Settings\AAG_CloudWatcher\COMMFile')
+    CLOUD_WATCHER_OUTPUT_PATH = winreg.QueryValueEx(aKey, "PathNameCCDAP4")
+
+aag_json_file = pathlib.Path(CLOUD_WATCHER_OUTPUT_PATH, "aag_json.dat")
+
 # check if aag_json.dat exists already
 if os.path.isfile(aag_json_file):
     st=os.stat(aag_json_file)
@@ -85,7 +108,6 @@ if os.path.isfile(aag_json_file):
 else:
     logger.warning(f'{aag_json_file} does not exist!')
     last_change = datetime.min
-
 
 if ( (datetime.now() -last_change).total_seconds() > CLOUD_WATCHER_TIMEOUT_SEC ):
     # trigger restart of cloudwatcher
