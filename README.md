@@ -6,6 +6,7 @@ The script is checking if the age of the aag_json.dat file is older than an expe
 If this is the case it kills the Cloud Watcher process and (re-)starts it.
 
 In general the script should be running out of the box without arguments if Cloud Watcher is installed in the default directory "C:/Program Files (x86)/AAG_CloudWatcher".
+
 Please enable the options "Start & Connect" and "Connect & Record" in the Cloud Watcher Device settings in the Setup tab, so that it immeadiately starts to create and update the "aag_json.dat" file.
 
 I am providing a compiled (.exe) tool in the releases section, which includes the python runtime and all required libraries.
