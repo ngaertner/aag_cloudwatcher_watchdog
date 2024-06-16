@@ -37,7 +37,7 @@ It is recommended to schedule the included VBS script instead of the python scri
 - Create an Action and point to the [aag_cw_watchdog.vbs](https://github.com/ngaertner/aag_cloudwatcher_watchdog/blob/main/aag_cw_watchdog.vbs) file
 
 #### NOTE:
-The VBS script requires the .EXE file (see [releases](https://github.com/ngaertner/aag_cloudwatcher_watchdog/releases) in the same folder.
+The VBS script requires the .EXE file (see [releases](https://github.com/ngaertner/aag_cloudwatcher_watchdog/releases)) in the same folder.
 You can pass all arguments mentioned above to the VBS script - it will pass them to the executable.
 The script will prevent annoing console popups that will appear during the execution of the task.
 
