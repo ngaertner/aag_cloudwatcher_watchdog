@@ -31,7 +31,7 @@ LOG_LEVEL                 = logging.NOTSET
 parser = argparse.ArgumentParser()
 parser.add_argument('--cw_path', help="Cloud Watcher Path (contains AAG_CloudWatcher.exe)", default=CLOUD_WATCHER_PATH)
 parser.add_argument('--out_path', help=f"Cloud Watcher Output Path (contains {CLOUD_WATCHER_AAG_JSON})", default=CLOUD_WATCHER_OUTPUT_PATH)
-parser.add_argument('--timeout', help=f"Timeout to restart inactive Cloud Watcher in seconds - default {CLOUD_WATCHER_TIMEOUT_SEC}s)", default=CLOUD_WATCHER_TIMEOUT_SEC)
+parser.add_argument('--timeout', help=f"Timeout to restart inactive Cloud Watcher in seconds - default {CLOUD_WATCHER_TIMEOUT_SEC}s", default=CLOUD_WATCHER_TIMEOUT_SEC)
 parser.add_argument('--log_dir', help="Directory to store Log Files", default=LOG_DIR)
 parser.add_argument('--log_file', help=f"Log Filename - default {LOG_FILE}", default=LOG_FILE)
 parser.add_argument('--log_level', help="Log Level (INFO|WARNING|ERROR) - default INFO", default='INFO', choices=['INFO','WARNING','ERROR'])
