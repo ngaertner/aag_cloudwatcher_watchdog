@@ -71,8 +71,9 @@ args = parser.parse_args()
 CLOUD_WATCHER_PATH = args.cw_path
 CLOUD_WATCHER_OUTPUT_PATH = args.out_path
 CLOUD_WATCHER_TIMEOUT_SEC = args.timeout
-LOG_DIR = args.log_dir
-LOG_FILE = args.log_file
+LOG_DIR   = args.log_dir
+LOG_FILE  = args.log_file
+LOG_LEVEL = args.log_level
 
 match args.log_level:
     case 'INFO':
