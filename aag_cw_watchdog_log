@@ -1,0 +1,35 @@
+2024-06-16 13:23:04 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:23:04 - AAG_CW_WATCHDOG - WARNING - aag_json.dat file is not up to date - initiating (re-)start of Cloud Watcher.
+2024-06-16 13:23:05 - AAG_CW_WATCHDOG - WARNING - Cloud Watcher is not running!
+2024-06-16 13:23:05 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
+2024-06-16 13:24:03 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:24:03 - AAG_CW_WATCHDOG - WARNING - aag_json.dat file is not up to date
+2024-06-16 13:24:03 - AAG_CW_WATCHDOG - INFO - Initiating (re-)start of Cloud Watcher.
+2024-06-16 13:24:03 - AAG_CW_WATCHDOG - INFO - Killing running Cloud Watcher!
+2024-06-16 13:24:06 - AAG_CW_WATCHDOG - INFO - Cloud Watcher successfully killed!
+2024-06-16 13:24:06 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
+2024-06-16 13:25:14 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:25:14 - AAG_CW_WATCHDOG - INFO - Initiating (re-)start of Cloud Watcher.
+2024-06-16 13:25:15 - AAG_CW_WATCHDOG - INFO - Killing running Cloud Watcher!
+2024-06-16 13:25:17 - AAG_CW_WATCHDOG - INFO - Cloud Watcher successfully killed!
+2024-06-16 13:25:17 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
+2024-06-16 13:26:23 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:26:23 - AAG_CW_WATCHDOG - INFO - Initiating (re-)start of Cloud Watcher.
+2024-06-16 13:26:24 - AAG_CW_WATCHDOG - INFO - Killing running Cloud Watcher!
+2024-06-16 13:26:26 - AAG_CW_WATCHDOG - INFO - Cloud Watcher successfully killed!
+2024-06-16 13:26:26 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
+2024-06-16 13:27:29 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:27:29 - AAG_CW_WATCHDOG - INFO - Initiating (re-)start of Cloud Watcher.
+2024-06-16 13:27:30 - AAG_CW_WATCHDOG - INFO - Killing running Cloud Watcher!
+2024-06-16 13:27:32 - AAG_CW_WATCHDOG - INFO - Cloud Watcher successfully killed!
+2024-06-16 13:27:32 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
+2024-06-16 13:27:45 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:27:45 - AAG_CW_WATCHDOG - INFO - Initiating (re-)start of Cloud Watcher.
+2024-06-16 13:27:46 - AAG_CW_WATCHDOG - INFO - Killing running Cloud Watcher!
+2024-06-16 13:27:48 - AAG_CW_WATCHDOG - INFO - Cloud Watcher successfully killed!
+2024-06-16 13:27:48 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
+2024-06-16 13:27:55 - AAG_CW_WATCHDOG - WARNING - aag_json.dat does not exist!
+2024-06-16 13:27:55 - AAG_CW_WATCHDOG - INFO - Initiating (re-)start of Cloud Watcher.
+2024-06-16 13:27:56 - AAG_CW_WATCHDOG - INFO - Killing running Cloud Watcher!
+2024-06-16 13:27:58 - AAG_CW_WATCHDOG - INFO - Cloud Watcher successfully killed!
+2024-06-16 13:27:58 - AAG_CW_WATCHDOG - INFO - Starting Cloud Watcher!
