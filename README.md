@@ -1,5 +1,5 @@
 # Watchdog Script for AAG Cloud Watcher
-This is a simple watchdog script to check if AAG Cloud Watcher is working as expected, and restart it in case it is not.
+This is a simple watchdog script to check if [AAG Cloud Watcher](https://eu.lunaticoastro.com/product/aag-cloudwatcher-cloud-detector/) is working as expected, and restart it in case it is not.
 It is intended to mitigate instabilites of Cloud Watcher which can lead to crashes (e.g. "Run-time error '6': Overflow").
 
 The script is checking if the age of the aag_json.dat file is older than an expected value.
