@@ -183,8 +183,7 @@ if (json_age > CLOUD_WATCHER_TIMEOUT_SEC ):
     else:
        logger.info("Killing running Cloud Watcher!")
        with open(os.devnull, 'w') as fp:
-          sp = subprocess.Popen("taskkill /f /im " + CLOUD_WATCHER_EXE, shell=True, stdout = fp, stderr=subprocess.STDOUT)
-       time.sleep(2) #wait for two seconds to kill process
+          sp = subprocess.Popen("taskkill /f /im " + CLOUD_WATCHER_EXE, shell=True, stdout = fp, stderr=subprocess.STDOUT).wait()
        if (CLOUD_WATCHER_EXE not in (p.name() for p in psutil.process_iter())):
             logger.info("Cloud Watcher successfully killed!")
        else:    
@@ -193,9 +192,11 @@ if (json_age > CLOUD_WATCHER_TIMEOUT_SEC ):
            sys.exit()
 
     logger.info("Starting Cloud Watcher!")
-    sp = subprocess.Popen([cloudwather_exe_file,""],stderr=subprocess.STDOUT,shell=True)
+    sp = subprocess.Popen([cloudwather_exe_file,""], start_new_session=True, shell=True)
     time.sleep(1)
     if (CLOUD_WATCHER_EXE not in (p.name() for p in psutil.process_iter())):
         logger.error("Cloud Watcher could not be started!")
+    else:
+        logger.info("Cloud Watcher successfully started!")
 
     log_file_handler.flush()
