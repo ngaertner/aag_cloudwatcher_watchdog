@@ -39,7 +39,7 @@ It is recommended to schedule the included VBS script instead of the python scri
 - Create a new Task
 - Do *NOT* select "Run wether user is logged on or not" and do *NOT* select "Run with highest privileges" - otherwhise you might get weird effects and "Zombie" Cloud Watcher instances
 - Create a Trigger to execute the Task with a repeat interval of "1 Minute" and set a starting time and select to end the Task after "30 Minutes"
-- Create an Action and point to the [aag_cw_watchdog.vbs](https://github.com/ngaertner/aag_cloudwatcher_watchdog/blob/main/aag_cw_watchdog.vbs) file
+- Create an Action and point to the [aag_cw_watchdog.vbs](https://github.com/ngaertner/aag_cloudwatcher_watchdog/blob/main/aag_cw_watchdog.vbs) file and adjust the directories and filenames to your needs.
 
 To test, close AAG Cloud Watcher and activate the Task int the Task Scheduler.
 - Check that the aag_json.dat file does not get updated anymore
