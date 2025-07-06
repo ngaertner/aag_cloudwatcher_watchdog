@@ -29,6 +29,10 @@ options:
   --log_level {INFO,WARNING,ERROR}  Log Level - default INFO
 ```
 
+IMPORTANT:
+Make sure to set the cloudwatcher to start logging files after the launch of the program:
+Goto Tab "Setup", "Device" and check "Start & Connect" and exit the Cloudwatcher application to save the setting.
+
 ### SCHEDULING:
 It is recommended to schedule the included VBS script instead of the python script or the .EXE file using the Windows Task Scheduler .
 - Start the Task Scheduler using keys "Windows + R" and enter "%windir%\system32\taskschd.msc /s"
